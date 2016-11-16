@@ -1,0 +1,28 @@
+###Java的向上转型和向下转型
+- 为什么要向上/想下转型？使用场景？
+- 这样做可能会引发什么问题？会丢失哪些域和方法？
+- 还能再转回来吗？
+
+某些场景比如，父类Instrument的很多子类Violin、Flute等都需要涉及到一种相同的操作play，这些子类都有自己独有的play（）方法的实现；当需要集体演奏的时候，就可以让tune方法使用Instrument作为类型参数即
+```
+void tune（Instrument instrument）{
+Violin violin=new Violin();
+Flute flute=new Flute();
+...
+violin.play();
+flute.play();
+}
+```
+
+
+又比如接口作为方法的类型参数，可以传入所有的接口的实现类。
+向上转型是一种抽象思想，简化了代码。
+
+[向上转型后再向下转回原来类型，会丢失子类独有的属性吗？](http://stackoverflow.com/questions/16224277/does-a-child-object-lose-its-unique-properties-after-casting-back-and-forth-betw)这个问题回答得很清楚：向上转型只是告诉编译器该类当做父类来处理，相应地其独有的（相对于父类）的属性和方法都会暂时被隐藏而不可用，向下转型为原来的类型之后，就跟最开始转型前没有区别了。
+
+方法的调用同方法的主体的连接过程称为绑定，当绑定过程发生在运行前完成称为"早期绑定"、"静态绑定"、"运行前绑定"（一个意思），发生在运行时则称为"后期绑定"、"静态绑定"、"运行期绑定"。Java语言中除了final标记的方法之外，都采用动态绑定。事实上静态方法也是运行前绑定的：静态方法属于类本身、不能够被重写，再结合这个问题[为什么我在子类中"重写了父类的静态方法"编译器不报错？](http://stackoverflow.com/questions/16617408/why-doesnt-the-compiler-complain-when-i-try-to-override-a-static-method)：即使子类中有方法签名和父类一样的静态方法func，在向上转型后调用func方法还是会调用父类的静态方法。
+
+
+参考链接：
+1. [漫画的形式说明向上/向下转型](http://www.cs.utexas.edu/~cannata/cs345/Class%20Notes/14%20Java%20Upcasting%20Downcasting.htm)
+2. [](http://www.cnblogs.com/wuyuegb2312/p/3858521.html)

@@ -52,11 +52,12 @@
 - 抽象类是对父类的更高一层次的抽象
 
 ####反射机制：
-Q：反射机制是什么？
+1. Q：反射机制是什么？
 A：the ability to examine or modify the runtime behavior of applications running in the Java virtual machine.（常用到getClass().getSimpleName()获得对象类型名做为log的TAG)
+2. 
 Q：反射机制优点和缺点？
 A：反射机制能够在运行中分析类、查看对象的信息、通用的数组操作代码(泛型)；可以越过非反射机制下代码中设置的权限进行操作。这样破坏了封装性、有安全隐患同时反射机制会消耗更多的时间。
-Q：应用场景：主要应用于工具的创建而非应用开发，如文件浏览器、单元测试工具
+3. Q：应用场景：主要应用于工具的创建而非应用开发，如文件浏览器、单元测试工具
 参：
 - [Reflection API](http://docs.oracle.com/javase/tutorial/reflect/index.html)
 - [What is reflection and why is it useful?](http://stackoverflow.com/questions/37628/what-is-reflection-and-why-is-it-useful)

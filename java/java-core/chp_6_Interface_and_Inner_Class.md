@@ -44,5 +44,5 @@
  - 使用静态方法构造的内部类对象，该内部类必须是静态内部类
 
 ###代理：
-利用代理可以在运行时创建实现了一组给定接口的新类；这种功能只有在编译时无法确定需要实现哪些接口时才有必要使用》 
+利用代理可以在运行时创建实现了一组给定接口的新类；这种功能只有在编译时无法确定需要实现哪些接口时才有必要使用 
 > A dynamic proxy class (simply referred to as a proxy class below) is a class that implements a list of interfaces specified at runtime when the class is created, with behavior as described below. A proxy interface is such an interface that is implemented by a proxy class. A proxy instance is an instance of a proxy class. Each proxy instance has an associated invocation handler object, which implements the interface InvocationHandler.  

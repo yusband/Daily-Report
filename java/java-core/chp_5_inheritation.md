@@ -43,12 +43,14 @@
 ####final 关键字
 - 包装类都是不可变类（final）
 - final类中所有方法都默认是final，而域不是
+
 ####抽象类
 - 含有抽象方法的类必须声明为抽象类：为了提高程序的清晰度
 - 不含抽象方法的类也可以声明为抽象类
 - 抽象方法没有方法体，以；结尾，充当着占位的角色
 - 抽象类可以作为变量类型名，引用一个非抽象子类的实例
 - 抽象类是对父类的更高一层次的抽象
+
 ####反射机制：
 Q：反射机制是什么？
 A：the ability to examine or modify the runtime behavior of applications running in the Java virtual machine.（常用到getClass().getSimpleName()获得对象类型名做为log的TAG)
